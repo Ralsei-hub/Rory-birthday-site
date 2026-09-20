@@ -193,38 +193,19 @@
 <div class="petal" style="left:5%; animation-delay:0s;">🌸</div>
 <div class="petal" style="left:30%; animation-delay:2s;">🌸</div>
 
-<!-- MUSIC (Autoplay + Loop + Hidden Video Fix, NO FADE) -->
-<video id="bgm" autoplay playsinline loop muted style="display:none; width:0; height:0;">
-  <source src="The Neighbourhood - Lovebomb (Official Audio).mp4" type="video/mp4">
-</video>
+<!-- MUSIC (MP3 — Instant Autoplay, No Delay, No Fade, No Video) -->
+<audio id="bgm" autoplay loop>
+  <source src="The Neighbourhood - Lovebomb (Official Audio).mp3" type="audio/mpeg">
+</audio>
 
 <script>
   const audio = document.getElementById("bgm");
 
-  // Start muted for iPhone autoplay
-  audio.muted = true;
-
-  // Try autoplay
-  audio.play().then(() => {
-    // Unmute after autoplay succeeds
-    setTimeout(() => {
-      audio.muted = false;
-      audio.volume = 1;
-    }, 300);
-  }).catch(() => {
-    // iPhone fallback
-    setTimeout(() => {
-      audio.play().then(() => {
-        audio.muted = false;
-        audio.volume = 1;
-      });
-    }, 500);
-  });
-
-  // Safety loop
-  audio.addEventListener("ended", () => {
-    audio.currentTime = 0;
-    audio.play();
+  // iPhone sometimes blocks autoplay until interaction
+  audio.play().catch(() => {
+    document.addEventListener("touchstart", () => {
+      audio.play();
+    }, { once: true });
   });
 </script>
 
