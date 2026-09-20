@@ -24,7 +24,6 @@
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 
-    /* Animated Purple → Pink Gradient */
     background: linear-gradient(180deg, #2b0040, #4b006e, #ff7acb);
     background-size: 400% 400%;
     animation: bgAnimation 12s ease-in-out infinite;
@@ -59,14 +58,13 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* ⭐ Bigger Text */
   h2 {
-    line-height: 1.6;
-    font-size: 20px;
+    line-height: 1.8;
+    font-size: 26px;
     margin-top: 20px;
     white-space: pre-line;
     color: white;
-
-    /* Glow visualizer */
     text-shadow: 0 0 10px #ff9ae0, 0 0 20px #ff9ae0;
     animation: glowPulse 3s ease-in-out infinite;
   }
@@ -91,7 +89,6 @@
     transform: scale(1.1);
   }
 
-  /* Floating pulsing heart */
   .pulse-heart {
     position: fixed;
     bottom: 20px;
@@ -108,7 +105,6 @@
     100% { transform: scale(1); opacity: 0.8; }
   }
 
-  /* Hearts */
   .heart {
     position: absolute;
     color: pink;
@@ -123,7 +119,6 @@
     100% {transform: translateY(-10vh); opacity: 0;}
   }
 
-  /* Sparkles */
   .sparkle {
     position: absolute;
     color: #ffe6fa;
@@ -139,7 +134,6 @@
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
   }
 
-  /* Petals */
   .petal {
     position: fixed;
     top: -10px;
@@ -172,28 +166,40 @@
     30% { transform: scale(1.08); }
     60% { transform: scale(0.97); }
   }
+
+  /* ⭐ Glow GIF */
+  .glow-gif {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow:
+      0 0 20px #ff9ae0,
+      0 0 40px #ff9ae0,
+      0 0 60px #b300ff;
+    animation: gifGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes gifGlow {
+    0% { box-shadow: 0 0 20px #ff9ae0, 0 0 40px #ff9ae0, 0 0 60px #b300ff; }
+    50% { box-shadow: 0 0 35px #ff9ae0, 0 0 60px #ff9ae0, 0 0 80px #b300ff; }
+    100% { box-shadow: 0 0 20px #ff9ae0, 0 0 40px #ff9ae0, 0 0 60px #b300ff; }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- Pulsing heart -->
 <div class="pulse-heart">💗</div>
 
-<!-- Hearts -->
 <div class="heart" style="left:10%;">❤️</div>
 <div class="heart" style="left:50%; animation-delay:1s;">💗</div>
 <div class="heart" style="left:80%; animation-delay:2s;">💕</div>
 
-<!-- Sparkles -->
 <div class="sparkle" style="left:12%; animation-delay:0.3s;">✨</div>
 <div class="sparkle" style="left:44%; animation-delay:2.0s;">✨</div>
 
-<!-- Petals -->
 <div class="petal" style="left:5%; animation-delay:0s;">🌸</div>
 <div class="petal" style="left:30%; animation-delay:2s;">🌸</div>
 
-<!-- MUSIC -->
 <audio id="bgm" autoplay loop>
   <source src="The Neighbourhood - Lovebomb (Official Audio).mp3" type="audio/mpeg">
 </audio>
@@ -211,7 +217,7 @@
 <section id="page1" class="active">
   <script> birthdayConfetti(); </script>
 
-  <img src="IMG_8453.gif" width="200"><br><br>
+  <img src="5ACA7137-F939-4403-BD6D-696359DCA503.gif" class="glow-gif"><br><br>
 
   <h2 class="wiggle-soft">
     Happy birthday, Rory my sweet beautiful angel.  
@@ -248,7 +254,7 @@
   <button onclick="showPage(3)">Continue</button>
 </section>
 
-<!-- PAGE 3 (UPDATED — IMAGES REMOVED + NEW TEXT) -->
+<!-- PAGE 3 -->
 <section id="page3">
   <h2 class="wiggle-soft">
     Rory, when I think about every memory we’ve made together, my entire heart softens.  
