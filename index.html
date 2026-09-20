@@ -24,7 +24,7 @@
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 
-    /* ⭐ Animated Purple → Pink Gradient */
+    /* Animated Purple → Pink Gradient */
     background: linear-gradient(180deg, #2b0040, #4b006e, #ff7acb);
     background-size: 400% 400%;
     animation: bgAnimation 12s ease-in-out infinite;
@@ -65,6 +65,16 @@
     margin-top: 20px;
     white-space: pre-line;
     color: white;
+
+    /* Glow visualizer */
+    text-shadow: 0 0 10px #ff9ae0, 0 0 20px #ff9ae0;
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0% { text-shadow: 0 0 10px #ff9ae0; }
+    50% { text-shadow: 0 0 25px #ff9ae0; }
+    100% { text-shadow: 0 0 10px #ff9ae0; }
   }
 
   button {
@@ -79,6 +89,23 @@
 
   button:active {
     transform: scale(1.1);
+  }
+
+  /* Floating pulsing heart */
+  .pulse-heart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: #ff9ae0;
+    animation: heartPulse 1.2s infinite ease-in-out;
+    pointer-events: none;
+  }
+
+  @keyframes heartPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.25); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
   }
 
   /* Hearts */
@@ -150,6 +177,9 @@
 
 <body>
 
+<!-- Pulsing heart -->
+<div class="pulse-heart">💗</div>
+
 <!-- Hearts -->
 <div class="heart" style="left:10%;">❤️</div>
 <div class="heart" style="left:50%; animation-delay:1s;">💗</div>
@@ -163,15 +193,36 @@
 <div class="petal" style="left:5%; animation-delay:0s;">🌸</div>
 <div class="petal" style="left:30%; animation-delay:2s;">🌸</div>
 
-<!-- Music -->
-<audio id="bgm" loop>
-  <source src="The Neighbourhood - Lovebomb (Official Audio).mp4" type="audio/mpeg">
+<!-- MUSIC (Autoplay + Fade-in + Loop) -->
+<audio id="bgm" autoplay loop playsinline>
+  <source src="The Neighbourhood - Lovebomb (Official Audio).mp4" type="audio/mp4">
 </audio>
 
 <script>
-  document.addEventListener("click", function() {
-    document.getElementById("bgm").play();
-  }, { once: true });
+  const audio = document.getElementById("bgm");
+
+  // Start volume at 0 for fade-in
+  audio.volume = 0;
+
+  // Try autoplay
+  audio.play().catch(() => {
+    setTimeout(() => audio.play(), 300);
+  });
+
+  // Fade-in effect
+  let fadeInterval = setInterval(() => {
+    if (audio.volume < 1) {
+      audio.volume += 0.02; // 5-second fade
+    } else {
+      clearInterval(fadeInterval);
+    }
+  }, 100);
+
+  // Safety loop
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0;
+    audio.play();
+  });
 </script>
 
 <!-- PAGE 1 -->
