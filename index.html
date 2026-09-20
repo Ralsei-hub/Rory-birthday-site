@@ -193,30 +193,49 @@
 <div class="petal" style="left:5%; animation-delay:0s;">🌸</div>
 <div class="petal" style="left:30%; animation-delay:2s;">🌸</div>
 
-<!-- MUSIC (Autoplay + Fade-in + Loop) -->
-<audio id="bgm" autoplay loop playsinline>
-  <source src="The Neighbourhood - Lovebomb (Official Audio).mp4" type="audio/mp4">
-</audio>
+<!-- MUSIC (Autoplay + Safe Fade-in + iPhone Fix) -->
+<video id="bgm" autoplay playsinline loop muted>
+  <source src="The Neighbourhood - Lovebomb (Official Audio).mp4" type="video/mp4">
+</video>
 
 <script>
   const audio = document.getElementById("bgm");
 
-  // Start volume at 0 for fade-in
-  audio.volume = 0;
+  // Start muted to satisfy iPhone autoplay rules
+  audio.muted = true;
 
-  // Try autoplay
-  audio.play().catch(() => {
-    setTimeout(() => audio.play(), 300);
+  // Try autoplay immediately
+  audio.play().then(() => {
+    // After autoplay succeeds, unmute + fade-in
+    setTimeout(() => {
+      audio.muted = false;
+      audio.volume = 0;
+
+      let fade = setInterval(() => {
+        if (audio.volume < 1) {
+          audio.volume += 0.02;
+        } else {
+          clearInterval(fade);
+        }
+      }, 120);
+    }, 300);
+  }).catch(() => {
+    // iPhone fallback
+    setTimeout(() => {
+      audio.play().then(() => {
+        audio.muted = false;
+        audio.volume = 0;
+
+        let fade = setInterval(() => {
+          if (audio.volume < 1) {
+            audio.volume += 0.02;
+          } else {
+            clearInterval(fade);
+          }
+        }, 120);
+      });
+    }, 500);
   });
-
-  // Fade-in effect
-  let fadeInterval = setInterval(() => {
-    if (audio.volume < 1) {
-      audio.volume += 0.02; // 5-second fade
-    } else {
-      clearInterval(fadeInterval);
-    }
-  }, 100);
 
   // Safety loop
   audio.addEventListener("ended", () => {
