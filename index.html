@@ -22,14 +22,18 @@
     text-align: center;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   section {
     display: none;
-    padding: 20px;
-    margin: 20px;
+    min-height: 100vh; /* fills the whole screen */
+    padding: 40px 20px;
+    box-sizing: border-box;
     border: 3px solid #ffcc66;
     border-radius: 15px;
+    margin: 20px;
     box-shadow: 0 0 15px #ffcc66, 0 0 30px #ffe9b3;
     animation: fadeIn 1s ease-in-out;
   }
@@ -43,13 +47,20 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  h2 {
+    line-height: 1.6;
+    font-size: 20px;
+    margin-top: 20px;
+    white-space: pre-line; /* preserves spacing */
+  }
+
   button {
     background-color: white;
     border: 2px solid hotpink;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 10px;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 30px;
     transition: transform 0.2s;
   }
 
@@ -57,6 +68,7 @@
     transform: scale(1.1);
   }
 
+  /* Hearts */
   .heart {
     position: absolute;
     color: pink;
@@ -71,6 +83,7 @@
     100% {transform: translateY(-10vh); opacity: 0;}
   }
 
+  /* Sparkles */
   .sparkle {
     position: absolute;
     color: #ffe6fa;
@@ -86,6 +99,7 @@
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
   }
 
+  /* Petals */
   .petal {
     position: fixed;
     top: -10px;
@@ -155,116 +169,78 @@
 
   <h2 class="wiggle-soft">
     Happy birthday, Rory.  
-    A whole year has passed since you came into my life,  
-    and every day I thank God for you.  
-    I pray for your happiness, your health,  
-    and for your heart to always feel loved.
+    Another year of your life, another year I get to be grateful for you.  
+    You’ve brought so much warmth into my world, and I hope today brings you the same comfort you give me every day.
   </h2>
 
   <button onclick="showPage(2)">Continue</button>
 </section>
 
-<!-- PAGE 2 (Birthday Message) -->
+<!-- PAGE 2 -->
 <section id="page2">
   <h2 class="wiggle-soft">
-    Rory… today isn’t just your birthday.  
-    It’s the anniversary of the moment the world was blessed with you —  
-    and the moment my life began moving toward something softer, warmer,  
-    and more beautiful than anything I ever imagined.
+    Rory, today is your day.  
+    The world became softer the moment you arrived in it.  
+    You’ve changed my life in ways I never expected.  
+    You make ordinary moments feel special, and you make difficult days feel lighter just by being here.
 
-    When you came into my world, everything changed.  
-    The air felt lighter.  
-    My days felt brighter.  
-    My heart felt fuller in a way I didn’t even know was possible.  
-    You didn’t just enter my life — you transformed it.  
-    You made every ordinary moment feel meaningful,  
-    every quiet night feel peaceful,  
-    every sunrise feel like a promise that life could be gentle again.
+    Your presence calms me.  
+    Your voice steadies me.  
+    Your laughter makes everything feel okay again.  
+    You carry a kind of gentleness that stays with people, and I’m lucky I get to feel it.
 
-    You are an angel, Rory.  
-    Not just because of your beauty,  
-    not just because of your kindness,  
-    but because of the way your presence heals.  
-    The way your voice calms storms inside me.  
-    The way your laughter makes everything feel okay.  
-    The way your heart shines so brightly that it lights up even the darkest parts of mine.
+    I pray for your happiness, your peace, and your comfort.  
+    You deserve a life full of warmth and love.  
+    You deserve to feel safe, appreciated, and cherished every single day.
 
-    I thank God every single day for you —  
-    for your health, your happiness, your comfort,  
-    for the softness in your soul,  
-    for the way you love,  
-    and for the way you exist in this world with so much grace.
-
-    You deserve a life overflowing with joy,  
-    with warmth,  
-    with safety,  
-    with love that never fades.  
-
-    Happy birthday, my angel.  
-    You are the best part of my world.  
-    <br><br>— Aser
+    Happy birthday, angel.  
+    You’re the best part of my world.
   </h2>
 
   <button onclick="showPage(3)">Continue</button>
 </section>
 
-<!-- PAGE 3 (Memories) -->
+<!-- PAGE 3 -->
 <section id="page3">
   <img src="image.png" width="250"><br><br>
   <img src="VRChat_2025-12-14_01-29-47.394_2560x1440.png" width="250"><br><br>
   <img src="VRChat_2026-01-05_08-54-14.644_2560x1440.png" width="250"><br><br>
 
   <h2 class="wiggle-soft">
-    Rory… when I look at these memories, I feel something deeper than nostalgia.  
-    I feel gratitude. I feel warmth. I feel the quiet, gentle happiness that only you bring.  
+    When I look at these memories, I feel grateful.  
+    Every moment we’ve shared has stayed with me.  
+    You’ve brought color into my life in a way no one else ever has.
 
-    Every moment we’ve shared — every laugh, every conversation, every tiny detail —  
-    has become a part of me. You’ve filled my life with color, softness, and meaning  
-    in a way no one else ever has.  
+    This past year with you has been beautiful.  
+    You made simple days feel magical.  
+    You made heavy days feel lighter.  
+    You made my world feel safe.
 
-    This past year with you has been the most beautiful chapter of my life.  
-    You made ordinary days feel magical.  
-    You made difficult days feel lighter.  
-    You made my world feel safe, warm, and full of hope.  
-
-    I can’t wait to make more memories with you —  
-    more moments that we’ll look back on and smile,  
-    more days where your laughter fills my heart,  
-    more nights where your voice brings me peace.  
-
-    You are my angel, my softness, my joy.  
-    And I’m grateful for every second I’ve spent with you.  
+    I can’t wait to make more memories with you.  
+    More moments that make us smile.  
+    More nights where your voice brings me peace.  
+    You’re my softness, my joy, my comfort.
   </h2>
 
   <button onclick="showPage(4)">Continue</button>
 </section>
 
-<!-- PAGE 4 (Final Birthday Message) -->
+<!-- PAGE 4 -->
 <section id="page4">
   <h2 class="wiggle-heartbeat">
-    Rory… happy birthday, my angel.  
-    Today is the day the world was blessed with you —  
-    and I will never stop being grateful for that miracle.  
+    Happy birthday, Rory.  
+    Today is the day the world was blessed with you, and I’ll always be grateful for that.  
+    You’ve brought light into places that were dim.  
+    You’ve brought comfort into moments that were heavy.  
+    You’ve brought love into a heart that needed warmth.
 
-    You’ve changed my life in ways I can’t fully express.  
-    You brought light into places that were dim.  
-    You brought comfort into moments that were heavy.  
-    You brought love into a heart that had forgotten what warmth felt like.  
+    You deserve joy that stays.  
+    You deserve peace that lasts.  
+    You deserve love that chooses you every day.
 
-    You deserve joy that never fades,  
-    peace that never leaves,  
-    and love that never stops choosing you.  
-
-    I can’t wait to spend many more birthdays with you,  
-    celebrating the beautiful soul you are.  
-    I love you endlessly.  
+    I can’t wait to spend more birthdays with you.  
+    You’re a beautiful soul, and I love you endlessly.
   </h2>
-
-  <p>🎧 Here’s a playlist I made just for you, my love.</p>
-
-  <a href="https://open.spotify.com/playlist/6yJlCg5rUMsdDpvotJQKzy?si=ZgCvsH95QGS1n2_jqUXSKw">
-    Open Playlist
-  </a>
 </section>
 
 <script>
