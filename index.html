@@ -18,18 +18,17 @@
 
 <style>
   body {
-    background-color: #fff4fa; /* soft birthday pink */
+    background-color: #fff4fa;
     text-align: center;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
   }
 
-  /* Birthday layout */
   section {
     display: none;
     padding: 20px;
     margin: 20px;
-    border: 3px solid #ffcc66; /* gold */
+    border: 3px solid #ffcc66;
     border-radius: 15px;
     box-shadow: 0 0 15px #ffcc66, 0 0 30px #ffe9b3;
     animation: fadeIn 1s ease-in-out;
@@ -58,7 +57,6 @@
     transform: scale(1.1);
   }
 
-  /* Floating hearts */
   .heart {
     position: absolute;
     color: pink;
@@ -73,7 +71,6 @@
     100% {transform: translateY(-10vh); opacity: 0;}
   }
 
-  /* Floating sparkles */
   .sparkle {
     position: absolute;
     color: #ffe6fa;
@@ -89,7 +86,6 @@
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
   }
 
-  /* Falling petals */
   .petal {
     position: fixed;
     top: -10px;
@@ -105,7 +101,6 @@
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
   }
 
-  /* Wiggle animations */
   .wiggle-soft {
     animation: wiggleSoft 2s infinite ease-in-out;
   }
@@ -113,14 +108,6 @@
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(2deg); }
     75% { transform: rotate(-2deg); }
-  }
-
-  .wiggle-magic {
-    animation: wiggleMagic 3s infinite ease-in-out;
-  }
-  @keyframes wiggleMagic {
-    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-    50% { transform: scale(1.05) rotate(1deg); opacity: 0.9; }
   }
 
   .wiggle-heartbeat {
@@ -183,33 +170,18 @@
 
 <body>
 
-<!-- Floating hearts -->
+<!-- Hearts -->
 <div class="heart" style="left:10%;">❤️</div>
 <div class="heart" style="left:50%; animation-delay:1s;">💗</div>
 <div class="heart" style="left:80%; animation-delay:2s;">💕</div>
-<div class="heart" style="left:5%; animation-delay:0.5s;">💖</div>
-<div class="heart" style="left:20%; animation-delay:1.2s;">💕</div>
-<div class="heart" style="left:35%; animation-delay:2.1s;">💗</div>
-<div class="heart" style="left:60%; animation-delay:0.8s;">💞</div>
-<div class="heart" style="left:75%; animation-delay:1.7s;">💘</div>
-<div class="heart" style="left:90%; animation-delay:2.4s;">❤️</div>
 
-<!-- Floating sparkles -->
+<!-- Sparkles -->
 <div class="sparkle" style="left:12%; animation-delay:0.3s;">✨</div>
-<div class="sparkle" style="left:28%; animation-delay:1.1s;">✨</div>
 <div class="sparkle" style="left:44%; animation-delay:2.0s;">✨</div>
-<div class="sparkle" style="left:58%; animation-delay:0.9s;">✨</div>
-<div class="sparkle" style="left:72%; animation-delay:1.8s;">✨</div>
-<div class="sparkle" style="left:88%; animation-delay:2.6s;">✨</div>
 
-<!-- Falling petals -->
+<!-- Petals -->
 <div class="petal" style="left:5%; animation-delay:0s;">🌸</div>
-<div class="petal" style="left:15%; animation-delay:1s;">💮</div>
 <div class="petal" style="left:30%; animation-delay:2s;">🌸</div>
-<div class="petal" style="left:45%; animation-delay:0.5s;">💮</div>
-<div class="petal" style="left:60%; animation-delay:1.5s;">🌸</div>
-<div class="petal" style="left:75%; animation-delay:2.5s;">💮</div>
-<div class="petal" style="left:90%; animation-delay:3s;">🌸</div>
 
 <!-- Music -->
 <audio id="bgm" loop>
@@ -294,11 +266,7 @@
     You deserve a life overflowing with joy,  
     with warmth,  
     with safety,  
-    with love that never fades,  
-    and with people who cherish you the way you deserve.  
-    And I promise you, with everything in me,  
-    that I will spend my life giving you the gentleness, devotion,  
-    and love that your heart was always meant to receive.
+    with love that never fades.  
 
     Happy birthday, my angel.  
     You are the best part of my world.  
@@ -327,11 +295,7 @@
     You made difficult days feel lighter.  
     You made my world feel safe, warm, and full of hope.  
 
-    You are the kind of person who makes life feel worth living.  
-    The kind of person whose presence feels like a blessing.  
-    The kind of person who turns memories into treasures.  
-
-    And I can’t wait to make more memories with you —  
+    I can’t wait to make more memories with you —  
     more moments that we’ll look back on and smile,  
     more days where your laughter fills my heart,  
     more nights where your voice brings me peace.  
@@ -355,23 +319,9 @@
     You brought comfort into moments that were heavy.  
     You brought love into a heart that had forgotten what warmth felt like.  
 
-    You are gentle, kind, beautiful, and full of a softness  
-    that makes life feel safe and meaningful.  
-    You are the type of person who makes the world better  
-    simply by existing in it.  
-
-    I hope this birthday reminds you of how loved you are,  
-    how cherished you are,  
-    how important you are,  
-    and how deeply your presence matters.  
-
     You deserve joy that never fades,  
     peace that never leaves,  
     and love that never stops choosing you.  
-
-    Thank you for being in my life.  
-    Thank you for being my comfort.  
-    Thank you for being my angel.  
 
     I can’t wait to spend many more birthdays with you,  
     celebrating the beautiful soul you are.  
@@ -380,7 +330,7 @@
 
   <p>🎧 Here’s a playlist I made just for you, my love.</p>
 
-  <a href="https://open.spotify.com/playlist/6yJlCg5rUMsdDpvotJQKzy?si=ZgCvsH95QGS1n2_jqUXSKw&pt=12d520ebed8af745a5ddf8af34525e82&pi=i0eN3fLXQ4-XT">
+  <a href="https://open.spotify.com/playlist/6yJlCg5rUMsdDpvotJQKzy?si=ZgCvsH95QGS1n2_jqUXSKw">
     Open Playlist
   </a>
 </section>
