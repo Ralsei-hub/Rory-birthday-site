@@ -193,46 +193,30 @@
 <div class="petal" style="left:5%; animation-delay:0s;">🌸</div>
 <div class="petal" style="left:30%; animation-delay:2s;">🌸</div>
 
-<!-- MUSIC (Autoplay + Safe Fade-in + iPhone Fix) -->
-<video id="bgm" autoplay playsinline loop muted>
+<!-- MUSIC (Autoplay + Loop + Hidden Video Fix, NO FADE) -->
+<video id="bgm" autoplay playsinline loop muted style="display:none; width:0; height:0;">
   <source src="The Neighbourhood - Lovebomb (Official Audio).mp4" type="video/mp4">
 </video>
 
 <script>
   const audio = document.getElementById("bgm");
 
-  // Start muted to satisfy iPhone autoplay rules
+  // Start muted for iPhone autoplay
   audio.muted = true;
 
-  // Try autoplay immediately
+  // Try autoplay
   audio.play().then(() => {
-    // After autoplay succeeds, unmute + fade-in
+    // Unmute after autoplay succeeds
     setTimeout(() => {
       audio.muted = false;
-      audio.volume = 0;
-
-      let fade = setInterval(() => {
-        if (audio.volume < 1) {
-          audio.volume += 0.02;
-        } else {
-          clearInterval(fade);
-        }
-      }, 120);
+      audio.volume = 1;
     }, 300);
   }).catch(() => {
     // iPhone fallback
     setTimeout(() => {
       audio.play().then(() => {
         audio.muted = false;
-        audio.volume = 0;
-
-        let fade = setInterval(() => {
-          if (audio.volume < 1) {
-            audio.volume += 0.02;
-          } else {
-            clearInterval(fade);
-          }
-        }, 120);
+        audio.volume = 1;
       });
     }, 500);
   });
