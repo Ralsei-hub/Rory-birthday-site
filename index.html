@@ -18,23 +18,35 @@
 
 <style>
   body {
-    background-color: #fff4fa;
+    margin: 0;
+    padding: 0;
     text-align: center;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+
+    /* ⭐ Animated Purple → Pink Gradient */
+    background: linear-gradient(180deg, #2b0040, #4b006e, #ff7acb);
+    background-size: 400% 400%;
+    animation: bgAnimation 12s ease-in-out infinite;
+  }
+
+  @keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   section {
     display: none;
-    min-height: 100vh; /* fills the whole screen */
+    min-height: 100vh;
     padding: 40px 20px;
     box-sizing: border-box;
-    border: 3px solid #ffcc66;
+    border: 3px solid #ff9ae0;
     border-radius: 15px;
     margin: 20px;
-    box-shadow: 0 0 15px #ffcc66, 0 0 30px #ffe9b3;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px #ff9ae0, 0 0 40px #b300ff;
     animation: fadeIn 1s ease-in-out;
   }
 
@@ -51,7 +63,8 @@
     line-height: 1.6;
     font-size: 20px;
     margin-top: 20px;
-    white-space: pre-line; /* preserves spacing */
+    white-space: pre-line;
+    color: white;
   }
 
   button {
@@ -184,16 +197,17 @@
     You’ve changed my life in ways I never expected.  
     You make ordinary moments feel special, and you make difficult days feel lighter just by being here.
 
-    Your presence Your voice your entire soul theyre like every glowing sun rays that i always want to admire.  
-    Your laughter makes everything feel okay again and your and the time with you always feels like seconds went by.
-    You carry a kind of gentleness that stays with people, and I’m lucky I get to feel it every day as your lucky boyfriend.
+    Your presence, your voice, your entire soul feel like glowing sun rays I always want to admire.  
+    Your laughter makes everything feel okay again, and time with you always feels like seconds passing by.  
+    You carry a gentleness that stays with people, and I’m lucky I get to feel it every day as your boyfriend.
 
     I pray for your happiness, your peace, and your comfort.  
     You deserve a life full of warmth and love.  
-    You deserve to feel safe, appreciated, and cherished every single day.
-    and i will make sure to make you feel all of those baby.
-    Happy birthday, Darling.  
-    You’re the best part of my world i love you.
+    You deserve to feel safe, appreciated, and cherished every single day.  
+    And I will make sure you feel all of that, baby.
+
+    Happy birthday, darling.  
+    You’re the best part of my world. I love you.
   </h2>
 
   <button onclick="showPage(3)">Continue</button>
